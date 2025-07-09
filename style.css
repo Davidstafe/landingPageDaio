@@ -1,0 +1,22 @@
+.Photo{
+    width: 100px;
+    height: 100px;
+    object-position: left;
+}
+
+.header{
+align-items: center;
+background-color: #fff;
+color: aqua;
+padding: 20px;;
+}
+
+h3{
+    size: 50px;
+    color: blueviolet;
+}
+
+h4{
+    size-adjust: 45px;
+    color: rgb(6, 6, 209);
+}
