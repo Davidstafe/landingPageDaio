@@ -13,10 +13,23 @@ padding: 20px;;
 
 h3{
     size: 50px;
-    color: blueviolet;
+    color: rgb(17, 241, 36);
 }
 
 h4{
     size-adjust: 45px;
     color: rgb(6, 6, 209);
+}
+
+///numero de whatsapp//    3425502094
+
+h5{
+ 3425502094
+}
+
+.card{
+    color: rgb(24, 46, 172);
+    text-align: center;
+    font-size: 12px;
+
 }
