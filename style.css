@@ -3,7 +3,9 @@
     height: 100px;
     object-position: left;
 }
-
+.estilo{
+    background-color: brown;
+}
 .header{
 align-items: center;
 background-color: #fff;
@@ -21,15 +23,40 @@ h4{
     color: rgb(6, 6, 209);
 }
 
-///numero de whatsapp//    3425502094
+/*//numero de whatsapp//    3425502094 */
 
-h5{
- 3425502094
-}
+
 
 .card{
     color: rgb(24, 46, 172);
     text-align: center;
     font-size: 12px;
 
+}
+
+.info{
+    text-align: center;
+    color: black;
+    margin-top: 100px;
+    
+}
+
+/*/////////////////Aca va la parte de contactos y redes sociales //////////////*/
+
+
+.social-btn {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px 0;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.instagram {
+    background-color: #e4405f;
 }
