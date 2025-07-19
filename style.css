@@ -1,16 +1,27 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
 .Photo{
     width: 100px;
     height: 100px;
     object-position: left;
+    margin-bottom: 20px;
 }
 .estilo{
     background-color: brown;
+    padding-top: 50px;
+    margin-top: 20px;
 }
 .header{
+    position: fixed;
+    z-index: 1000;
 align-items: center;
 background-color: #fff;
 color: aqua;
-padding: 20px;;
+padding: 20px 40px;
+margin-bottom: 20px;
 }
 
 h3{
@@ -28,6 +39,8 @@ h4{
 
 
 .card{
+    padding: 10px;
+    margin-top: 20px;
     color: rgb(24, 46, 172);
     text-align: center;
     font-size: 12px;
@@ -59,4 +72,49 @@ h4{
 
 .instagram {
     background-color: #e4405f;
+}
+.navbar {
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  min-height: 70px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.logo img {
+  height: 60px;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+
+.brand {
+  font-size: 24px;
+  color: #333;
+  flex-grow: 1;          /* Para que ocupe el espacio central */
+  text-align: center;    /* Centra el texto */
+  margin: 0 20px;        /* Margen para separar del logo y el botón */
+  white-space: nowrap;   /* Evita que se divida en varias líneas */
+}
+.nav-btn {
+  background-color: #0b5ed7;
+  color: white;
+  padding: 10px 20px;  /* Más ancho para que no se corte */
+  text-decoration: none;
+  border-radius: 5px;
+  white-space: nowrap; /* Que no se parta en dos líneas */
+}
+
+.nav-btn:hover {
+  background-color: #094db2;
 }
