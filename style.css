@@ -89,8 +89,11 @@ h4{
 }
 
 main.project {
-    padding-top: 100px; /* Ajustá este valor según el alto real de tu header */
+  max-width: 800px;
+  margin: 120px auto 0 auto;
+  padding: 0 20px;
 }
+
 
 
 .logo{
@@ -104,15 +107,19 @@ main.project {
 }
 
 
-
 .brand {
   font-size: 24px;
   color: #333;
-  flex-grow: 1;          /* Para que ocupe el espacio central */
-  text-align: center;    /* Centra el texto */
-  margin: 0 20px;        /* Margen para separar del logo y el botón */
-  white-space: nowrap;   /* Evita que se divida en varias líneas */
+  text-align: center;
+  white-space: nowrap;
+
+  /* NUEVO */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 800px;
 }
+
 .nav-btn {
   background-color: #0b5ed7;
   color: white;
@@ -124,4 +131,10 @@ main.project {
 
 .nav-btn:hover {
   background-color: #094db2;
+}
+
+/*prueba: para ver la caja entre mi brand y mi main**/
+
+.project, .brand {
+  outline: 1px dashed red;
 }
