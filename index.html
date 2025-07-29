@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
     <title>Landing Page daiana</title>
 </head>
+
 <body class="estilo">
- 
-   <header class="navbar">
+
+    <header class="navbar">
         <div class="navbar-section logo">
-        <img src="img.jpg" alt="Logo Mi Delirio">
+            <img src="img.jpg" alt="Logo Mi Delirio">
         </div>
 
         <div class="navbar-section brand">
@@ -23,51 +25,103 @@
             <a href="#contacto" class="nav-btn">Contactame</a>
         </div>
     </header>
-    
+
     <main class="project">
 
         <section class="card">
             <h2>DISEÑO</h2>
-                <p>Todo lo que soñaste</p>
-                    <p2>ver galeria</p2>
+            <p>Todo lo que soñaste</p>
+            <p><a href="#galeria-diseno">Ver galería</a></p>
+            <button onclick="abrirgaleria('galeria-diseno') ></button>
+
+            <section id="galeria-diseno" class="galeria">
+                <div class="galeria-fotos">
+                    <img src="img/diseno1.jpg" alt="Diseño 1">
+                    <img src="img/diseno2.jpg" alt="Diseño 2">
+                </div>
+            </section>
+
         </section>
-        
+
         <section class="card">
             <h2>IMPRESIÓN</h2>
-                <p>Sobre todo material</p>
-                   <p2>ver galeria</p2>
+            <p>Sobre todo material</p>
+            <p><a href="#galeria-impresion">Ver galería</a></p>
+            <button onclick="abrirgaleria('galeria-impresion')">vergaleria</button>
 
+
+            <section id="galeria-impresion" class="galeria">
+                <h2>Galería - Impresión</h2>
+                <div class="galeria-fotos">
+                    <img src="img/impresion1.jpg" alt="Impresión 1">
+                    <img src="img/impresion2.jpg" alt="Impresión 2">
+                </div>
             </section>
+
+        </section>
 
         <section class="card">
             <h2>SUBLIMACIÓN</h2>
-                <p>En distintos materiales</p>
-                  <p2>ver galeria</p2>
+            <p>En distintos materiales</p>
+            <p><a href="#galeria-sublimacion">Ver galería</a></p>
+            <button onclick="abrirgaleria('galeria-sublimacion')"></button>
+            
+            <section id="galeria-sublimacion" class="galeria">
+            <h2>Galería - Sublimación</h2>
+            <div class="galeria-fotos">
+                <img src="img/sublimacion1.jpg" alt="Sublimación 1">
+                <img src="img/sublimacion2.jpg" alt="Sublimación 2">
+            </div>
+        </section>
 
         </section>
 
         <section class="card">
-           
-        <h2><i class="fas fa-globe"></i> Redes Sociales</h2>
-                 <a href="https://www.facebook.com/mi.delirio.s.05" target="_blank">
+
+            <h2><i class="fas fa-globe"></i> Redes Sociales</h2>
+            <a href="https://www.facebook.com/mi.delirio.s.05" target="_blank">
                 <i class="fab fa-facebook"></i> Facebook: mi.delirio.s.05
             </a><br>
 
             <a href="https://www.instagram.com/mi.delirio.s" target="_blank">
                 <i class="fab fa-instagram"></i> Instagram: Mi.delirio.s
             </a>
-    </section>
-        
+        </section>
 
-  <section class="card">
-        <h2>Contact / Contacto</h2>
+
+        <section class="card">
+            <h2>Contact / Contacto</h2>
             <p>📩Email: <a href="mailto:mi.delirio.05@gmail.com">mi.delirio.05@gmail.com</a></p>
-       <h3>WhatsApp</h3>
-                <h5><i class="fab fa-whatsapp"></i> +3425502094</h5>
-    </section>
+            <h3>WhatsApp</h3>
+            <h5><i class="fab fa-whatsapp"></i> +3425502094</h5>
+        </section>
 
     </main>
- 
+<!-- Modal de DISEÑO -->
+<div id="galeria-diseno" class="modal">
+  <span class="cerrar" onclick="cerrarGaleria('galeria-diseno')">&times;</span>
+  <img src="img/diseno1.jpg">
+  <img src="img/diseno2.jpg">
+  <img src="img/diseno3.jpg">
+</div>
+
+<!-- Modal de IMPRESIÓN -->
+<div id="galeria-impresion" class="modal">
+  <span class="cerrar" onclick="cerrarGaleria('galeria-impresion')">&times;</span>
+  <img src="img/impresion1.jpg">
+  <img src="img/impresion2.jpg">
+  <img src="img/impresion3.jpg">
+</div>
+
+<!-- Modal de SUBLIMACIÓN -->
+<div id="galeria-sublimacion" class="modal">
+  <span class="cerrar" onclick="cerrarGaleria('galeria-sublimacion')">&times;</span>
+  <img src="img/sublimacion1.jpg">
+  <img src="img/sublimacion2.jpg">
+  <img src="img/sublimacion3.jpg">
+</div>
+
 
 </body>
+
 </html>
