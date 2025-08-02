@@ -10,7 +10,7 @@ box-sizing: border-box;
     margin-bottom: 20px;
 }
 .estilo{
-    background-color: brown;
+  
     padding-top: 50px;
     margin-top: 20px;
 }
@@ -56,6 +56,42 @@ h5{
     color: black;
     margin-top: 100px;
     
+}
+
+
+/*/////////////////Aca va el fondo de imagen //////////////*/
+/*/ Fondo tenue para toda la página */
+body {
+  background-image: url('images/fondo.jpg'); /* Cambia por tu ruta */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  min-height: 100vh;
+}
+body.estilo{
+  background-image: url('1000_F_340307857_rgLD1RnwRBJGMq4KXaweOrzEzyp0Lxg3.jpg'); /* ruta correcta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Overlay blanco translúcido para que la imagen quede tenue */
+body.estilo::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,255,255,0.6); /* o rgba(0,0,0,0.4) si querés oscurecer */
+    z-index: -1;
+}
+
+/* Para que todo el contenido esté arriba del overlay */
+body > * {
+  position: relative;
+  z-index: 0;
 }
 
 /*/////////////////Aca va la parte de contactos y redes sociales //////////////*/
