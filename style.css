@@ -99,6 +99,48 @@ body > * {
 
 /*/////////////////Aca va la parte de contactos y redes sociales //////////////*/
 
+/*     CONTACTO////*/
+/* ==== BOTONES DE CONTACTO (WhatsApp, Facebook, Instagram) ==== */
+
+/* Estilo general de la tarjeta */
+
+
+/* Título */
+.card.contacto h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Email */
+.card.contacto p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Botón de WhatsApp */
+.btn-whatsapp {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe5d;
+}
+
+/* Teléfono debajo */
+.telefono {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
 
 .social-btn {
     display: inline-block;
