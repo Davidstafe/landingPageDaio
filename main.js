@@ -10,13 +10,24 @@ function abrirgaleria(id) {
   // Pone título
   titulo.textContent = id.replace('galeria-', '').toUpperCase();
 
-  // Carga imágenes
-  imagenes[id].forEach(img => {
-    const slide = document.createElement('div');
-    slide.classList.add('swiper-slide');
-    slide.innerHTML = `<img src="${img}" alt="">`;
-    contenedor.appendChild(slide);
-  });
+  // Carga todas las images y guarda el indice inicial
+  indexInicial = 0;
+  let contador = 0;
+
+  for (let cat in imagenes) {
+    imagenes[cat].forEach((img, i) => {
+      const slide = document.createElement('div');
+      slide.classList.add('swiper-slide');
+      slide.innerHTML = `<img src="${img}" alt="">`;
+      contenedor.appendChild(slide);
+
+      // si es la categoría pedida, guardamos el índice inicial
+      if (cat === id && i === fotoIndex) {
+        indexInicial = contador;
+      }
+      contador++;
+    });
+  }
 
   // Muestra la galería
   const galeria = document.getElementById('galeria-general');
@@ -33,13 +44,15 @@ function abrirgaleria(id) {
     centeredSlides: true,
     slidesPerView: 'auto',
     spaceBetween: 20,
-    loop: true,
+    loop: false,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
-    }
+    },
+    initialSlide: indexInicial // 👈 importante para que arranque en la categoría elegida
   });
 }
+
 function cerrarGaleria() {
   const galeria = document.getElementById('galeria-general');
   galeria.style.display = 'none';

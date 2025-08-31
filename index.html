@@ -76,13 +76,38 @@
 
         </section>
 
-        <section id="galeria-general">
-  <h2 id="titulo-galeria">TITULO</h2>
+       <section id="galeria-general" style="display:none;">
+  <h2 id="titulo-galeria">Galería</h2>
   <div class="swiper mySwiper">
     <div class="swiper-wrapper" id="galeria-slides">
-      <!-- Aquí se insertan los slides -->
+      <!-- Aquí JS insertará las fotos -->
     </div>
     <!-- botones de navegación -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+  <button onclick="cerrarGaleria()">Cerrar</button>
+</section>
+
+<section id="galeria-todas">
+  <h2>Todas las fotos</h2>
+  <div class="grid-fotos">
+    <!-- Diseño -->
+    <img src="img/diseno1.jpg" onclick="abrirgaleria('galeria-diseno', 0)">
+    <img src="img/diseno2.jpg" onclick="abrirgaleria('galeria-diseno', 1)">
+    <img src="img/diseno3.jpg" onclick="abrirgaleria('galeria-diseno', 2)">
+
+    <!-- Impresión -->
+    <img src="img/impresion1.jpg" onclick="abrirgaleria('galeria-impresion', 0)">
+    <img src="img/impresion2.jpg" onclick="abrirgaleria('galeria-impresion', 1)">
+    <img src="img/impresion3.jpg" onclick="abrirgaleria('galeria-impresion', 2)">
+
+    <!-- Sublimación -->
+    <img src="img/sublimacion1.jpg" onclick="abrirgaleria('galeria-sublimacion', 0)">
+    <img src="img/sublimacion2.jpg" onclick="abrirgaleria('galeria-sublimacion', 1)">
+    <img src="img/sublimacion3.jpg" onclick="abrirgaleria('galeria-sublimacion', 2)">
+  </div>
+</section><!-- botones de navegación -->
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
