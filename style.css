@@ -223,105 +223,29 @@ main.project {
 .project, .brand {
   outline: 1px dashed red;
 }
-
-/* galeria de fotos, al hacer click me sube las imagenes*/
-.galeria {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.galeria-fotos {
+.titulo-slide {
+  color: white;
+  font-size: 2rem;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 20px;
+  align-items: center;
+  height: 80vh;
 }
 
-.galeria-fotos img {
+.grupo-fotos {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.grupo-fotos img {
   width: 200px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
 }
 
-.galeria-fotos img:hover {
-  transform: scale(1.05);
-}
 
-.cerrar {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
-}
-
-/* Estilos para la galería slider Swiper */
-
-#galeria-general {
-  padding: 40px;
-  background: #f8f8f8;
-  display: none; /* Oculto hasta abrirse */
-  max-width: 900px;
-  margin: 40px auto 100px auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  font-family: 'Poppins', sans-serif;
-}
-
-#galeria-general h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  font-weight: 600;
-  color: #333;
-}
-
-.swiper {
-  width: 100%;
-  padding-top: 20px;
-  padding-bottom: 40px;
-}
-
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  width: 250px;
-  height: 250px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.swiper-slide-active {
-  width: 400px !important;
-  height: 400px !important;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-  transform: scale(1.05);
-  z-index: 10;
-}
-
-.swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  color: #555;
-  transition: color 0.3s ease;
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  color: #007bff;
-}
 
 @media (max-width: 768px) {
   .swiper-slide {

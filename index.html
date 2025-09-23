@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
 
@@ -35,7 +35,7 @@
         <section class="card">
             <h2>DISEÑO</h2>
             <p>Todo lo que soñaste</p>
-            <button onclick="abrirgaleria(galeria-diseno)"> ver galeria</button>
+            <button onclick="abrirgaleria('galeria-diseno')"> ver galeria</button>
             
 
         </section>
@@ -45,41 +45,36 @@
         <section class="card">
             <h2>IMPRESIÓN</h2>
             <p>Sobre todo material</p>
-            <button onclick="abrirgaleria(galeria-impresion)">ver galeria</button>
+            <button onclick="abrirgaleria('galeria-impresion')">ver galeria</button>
             
             
-            <!--
-            <section id="galeria-impresion" class="galeria">
-                <h2>Galería - Impresión</h2>
-                <div class="galeria-fotos">
-                    <img src="img/impresion1.jpg" alt="Impresión 1">
-                    <img src="img/impresion2.jpg" alt="Impresión 2">
-                </div>
-            </section> --¡>
-            --> 
-
-        
+            
         </section>
 
         <section class="card">
             <h2>SUBLIMACIÓN</h2>
             <p>En distintos materiales</p>  
-           <button onclick="abrirgaleria(galeria-sublimacion)">ver galeria</button>
+           <button onclick="abrirgaleria('galeria-sublimacion')">ver galeria</button>
             
-            <!--<section id="galeria-sublimacion" class="galeria">
-            <h2>Galería - Sublimación</h2>
-            <div class="galeria-fotos">
-                <img src="img/sublimacion1.jpg" alt="Sublimación 1">
-                <img src="img/sublimacion2.jpg" alt="Sublimación 2">
-            </div>
-        </section> --¡> -->
+          
+<!-- Lightbox / Galería general -->
+<section id="galeria-general" style="display:none;">
+  <span class="cerrar" onclick="cerrarGaleria()">×</span>
+  <h2 id="titulo-galeria">Galería</h2>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper" id="galeria-slides">
+      <!-- Aquí JS insertará las fotos -->
+    </div>
+
+    <!-- botones de navegación -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
 
         </section>
 
-       <section id="galeria-general" style="display:none;">
-  <h2 id="titulo-galeria">Galería</h2>
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper" id="galeria-slides">
       <!-- Aquí JS insertará las fotos -->
     </div>
     <!-- botones de navegación -->
@@ -103,8 +98,8 @@
     <img src="img/impresion3.jpg" onclick="abrirgaleria('galeria-impresion', 2)">
 
     <!-- Sublimación -->
-    <img src="img/sublimacion1.jpg" onclick="abrirgaleria('galeria-sublimacion', 0)">
-    <img src="img/sublimacion2.jpg" onclick="abrirgaleria('galeria-sublimacion', 1)">
+    <img src="images/sublimacion.jpg" onclick="abrirgaleria('galeria-sublimacion', 0)">
+    <img src="images/sublimacion1.png" onclick="abrirgaleria('galeria-sublimacion', 1)">
     <img src="img/sublimacion3.jpg" onclick="abrirgaleria('galeria-sublimacion', 2)">
   </div>
 </section><!-- botones de navegación -->
