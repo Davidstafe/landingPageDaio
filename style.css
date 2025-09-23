@@ -1,270 +1,211 @@
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-.Photo{
-    width: 100px;
-    height: 100px;
-    object-position: left;
-    object-fit: cover; /* Esto suele ampliar y recortar */
-    object-position:center; /* opcional */
-    margin-bottom: 20px;
-    
-}
-.estilo{
-  
-    padding-top: 50px;
-    margin-top: 20px;
-}
-.header{
-    position: fixed;
-    z-index: 1000;
-align-items: center;
-background-color: #fff;
-color: aqua;
-padding: 20px 40px;
-margin-bottom: 20px;
+/* ==== RESET ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h2{
-  size: 50px;
-  color: #333;
-}
-h3{
-    size: 50px;
-    color: rgb(17, 241, 36);
-}
-
-h5{
-    size-adjust: 45px;
-    color: rgb(6, 6, 209);
-}
-
-/*//numero de whatsapp//    3425502094 */
-
-
-
-.card{
-    padding: 10px;
-    margin-top: 20px;
-    color: rgb(24, 46, 172);
-    text-align: center;
-    font-size: 12px;
-
-}
-
-.info{
-    text-align: center;
-    color: black;
-    margin-top: 100px;
-    
-}
-
-
-/*/////////////////Aca va el fondo de imagen //////////////*/
-/*/ Fondo tenue para toda la página */
 body {
-  background-image: url('images/1.jpg'); /* Cambia por tu ruta */
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-image: url('images/fondo.jpg'); /* cambia la ruta si hace falta */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  position: relative;
-  font-family: 'Poppins', sans-serif;
-  color: #333;
   min-height: 100vh;
-}
-body.estilo{
-  background-image: url('images/fondo.jpg'); /* ruta correcta de tu imagen */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    position: relative;
-}
-
-/* Overlay blanco translúcido para que la imagen quede tenue */
-body.estilo::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(255,255,255,0.6); /* o rgba(0,0,0,0.4) si querés oscurecer */
-    z-index: -1;
-}
-
-/* Para que todo el contenido esté arriba del overlay */
-body > * {
   position: relative;
-  z-index: 0;
+  padding-top: 80px; /* para que no tape el header */
 }
 
-/*/////////////////Aca va la parte de contactos y redes sociales //////////////*/
-
-/*     CONTACTO////*/
-/* ==== BOTONES DE CONTACTO (WhatsApp, Facebook, Instagram) ==== */
-
-/* Estilo general de la tarjeta */
-
-
-/* Título */
-.card.contacto h2 {
-    margin-bottom: 15px;
-    color: #333;
+/* Overlay translúcido para suavizar el fondo */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.7);
+  z-index: -1;
 }
 
-/* Email */
-.card.contacto p {
-    margin: 10px 0;
-    font-size: 16px;
-}
-
-/* Botón de WhatsApp */
-.btn-whatsapp {
-    display: inline-block;
-    background-color: #25D366;
-    color: white;
-    padding: 12px 18px;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background 0.3s;
-}
-
-.btn-whatsapp:hover {
-    background-color: #1ebe5d;
-}
-
-/* Teléfono debajo */
-.telefono {
-    margin-top: 15px;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-
-.social-btn {
-    display: inline-block;
-    padding: 10px;
-    margin: 5px 0;
-    text-decoration: none;
-    color: white;
-    border-radius: 5px;
-}
-
-.facebook {
-    background-color: #3b5998;
-}
-
-.instagram {
-    background-color: #e4405f;
-}
+/* ==== NAVBAR ==== */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80px; /* o la altura que uses */
-    background-color: white;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-main.project {
-  max-width: 800px;
-  margin: 120px auto 0 auto;
-  padding: 0 20px;
-}
-
-
-
-.logo{
-  justify-content: flex-start;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
 }
 
 .logo img {
   height: 60px;
-  max-height: 100%;
   object-fit: contain;
 }
-
 
 .brand {
   font-size: 24px;
   color: #333;
-  text-align: center;
-  white-space: nowrap;
-
-  /* NUEVO */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 800px;
+  font-weight: 600;
 }
 
 .nav-btn {
   background-color: #0b5ed7;
   color: white;
-  padding: 10px 20px;  /* Más ancho para que no se corte */
+  padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
-  white-space: nowrap; /* Que no se parta en dos líneas */
+  white-space: nowrap;
+  transition: background 0.3s;
 }
 
 .nav-btn:hover {
   background-color: #094db2;
 }
 
-/*prueba: para ver la caja entre mi brand y mi main**/
-
-.project, .brand {
-  outline: 1px dashed red;
-}
-.titulo-slide {
-  color: white;
-  font-size: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
+/* ==== MAIN ==== */
+main.project {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.grupo-fotos {
-  display: flex;
-  justify-content: center;
+/* ==== CARDS ==== */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #555;
+  font-size: 14px;
+}
+
+/* ==== GALERÍA ==== */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 15px;
+  margin-top: 15px;
 }
 
-.grupo-fotos img {
-  width: 200px;
-  height: auto;
+.galeria img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+  cursor: pointer;
 }
 
-
-
-@media (max-width: 768px) {
-  .swiper-slide {
-    width: 180px;
-    height: 180px;
-  }
-  .swiper-slide-active {
-    width: 300px !important;
-    height: 300px !important;
-  }
+.galeria img:hover {
+  transform: scale(1.05);
 }
 
-@media (max-width: 480px) {
-  .swiper-slide {
-    width: 130px;
-    height: 130px;
+/* ==== REDES Y CONTACTO ==== */
+.card.contacto h2 {
+  margin-bottom: 15px;
+}
+
+.card.contacto p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+.social-btn {
+  display: inline-block;
+  padding: 10px;
+  margin: 5px 0;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+
+.instagram {
+  background-color: #e4405f;
+}
+.thumbnail {
+  width: 120px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  border-radius: 10px;
+}
+
+.cerrar {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* ==== RESPONSIVE ==== */
+@media (max-width: 600px) {
+  .brand {
+    font-size: 18px;
   }
-  .swiper-slide-active {
-    width: 220px !important;
-    height: 220px !important;
+
+  .galeria img {
+    height: 150px;
   }
 }

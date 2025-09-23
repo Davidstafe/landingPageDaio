@@ -33,7 +33,7 @@ function abrirgaleria(id) {
   // Mostrar galería
   document.getElementById('galeria-general').style.display = 'block';
 
-  // Destruir Swiper previo
+  // Destruir Swiper previo si existe
   if (swiperInstance) swiperInstance.destroy(true, true);
 
   // Inicializar Swiper
