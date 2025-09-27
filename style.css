@@ -87,7 +87,7 @@ main.project { max-width: 900px; margin: 0 auto; padding: 20px; }
 }
 
 .galeria img {
-  width: 30%;
+  width: calc(33.333% - 8px);
   max-width: 240px;
   height: 160px;
   object-fit: cover;
@@ -97,7 +97,9 @@ main.project { max-width: 900px; margin: 0 auto; padding: 20px; }
   transition: transform .16s;
 }
 
-.galeria img:hover { transform: scale(1.03); }
+.galeria img:hover {
+  transform: scale(1.03);
+}
 
 /* Lightbox2 se ajusta automáticamente, solo limitamos tamaño */
 .lightbox img {
