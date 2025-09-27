@@ -8,21 +8,12 @@
 body {
   font-family: 'Poppins', sans-serif;
   color: #333;
-  background-image: url('images/fondo.jpg'); /* fondo */
+  background-image: url('images/fondo.jpg'); /* Cambia según corresponda */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   min-height: 100vh;
-  position: relative;
-  padding-top: 80px;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255,255,255,0.7);
-  z-index: -1;
+  padding-top: 80px; /* espacio para navbar */
 }
 
 /* ==== NAVBAR ==== */
@@ -40,15 +31,18 @@ body::before {
   z-index: 1000;
 }
 
-.logo img { height: 60px; object-fit: contain; }
+.logo img {
+  height: 60px;
+  object-fit: contain;
+}
 
 .brand {
   font-size: 24px;
+  font-weight: 600;
   color: #333;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  font-weight: 600;
 }
 
 .nav-btn {
@@ -60,10 +54,16 @@ body::before {
   transition: background 0.3s;
 }
 
-.nav-btn:hover { background-color: #094db2; }
+.nav-btn:hover {
+  background-color: #094db2;
+}
 
 /* ==== MAIN ==== */
-main.project { max-width: 900px; margin: 0 auto; padding: 20px; }
+main.project {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
 /* ==== CARDS ==== */
 .card {
@@ -75,8 +75,15 @@ main.project { max-width: 900px; margin: 0 auto; padding: 20px; }
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.card h2 { color: #222; margin-bottom: 10px; }
-.card p { color: #555; font-size: 14px; }
+.card h2 {
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #555;
+  font-size: 14px;
+}
 
 /* ==== GALERÍA ==== */
 .galeria {
@@ -87,25 +94,18 @@ main.project { max-width: 900px; margin: 0 auto; padding: 20px; }
 }
 
 .galeria img {
-  width: calc(33.333% - 8px);
+  width: calc(33.333% - 8px); /* 3 por fila */
   max-width: 240px;
   height: 160px;
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.12);
-  transition: transform .16s;
+  transition: transform 0.16s;
 }
 
 .galeria img:hover {
   transform: scale(1.03);
-}
-
-/* Lightbox2 se ajusta automáticamente, solo limitamos tamaño */
-.lightbox img {
-  max-width: 90vw;
-  max-height: 80vh;
-  object-fit: contain;
 }
 
 /* ==== CONTACTO ==== */
@@ -114,19 +114,58 @@ main.project { max-width: 900px; margin: 0 auto; padding: 20px; }
   padding: 20px;
 }
 
-.contacto h2 { margin-top: 15px; font-size: 22px; color: #333; }
-.contact-list { list-style: none; padding: 0; margin: 10px 0 20px; }
-.contact-list li { margin: 8px 0; font-size: 18px; display: flex; align-items: center; justify-content: center; gap: 10px; }
-.contact-list i { font-size: 20px; }
+.contacto h2 {
+  margin-top: 15px;
+  font-size: 22px;
+  color: #333;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px 0;
+}
+
+.contact-list li {
+  margin: 8px 0;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.contact-list i {
+  font-size: 20px;
+}
+
 .fa-envelope { color: #444; }
 .fa-whatsapp { color: #25D366; }
 .fa-facebook { color: #1877f2; }
 .fa-instagram { color: #E4405F; }
-.contact-list a { text-decoration: none; color: #333; font-weight: 500; }
-.contact-list a:hover { color: #ff4081; }
+
+.contact-list a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.contact-list a:hover {
+  color: #ff4081;
+}
 
 /* ==== RESPONSIVE ==== */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
+  .galeria img {
+    width: calc(50% - 8px);
+    height: 140px;
+  }
+}
+
+@media (max-width: 500px) {
   .brand { font-size: 18px; }
-  .galeria img { width: 45%; height: 140px; }
+  .galeria img {
+    width: 100%;
+    height: auto;
+  }
 }
