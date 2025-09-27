@@ -1,102 +1,111 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Daiana</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-  <title>Landing Page Daiana</title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- Lightbox2 -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+    <!-- JS Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js" defer></script>
 </head>
-<body>
+<body class="estilo">
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="navbar-section logo">
-      <img src="img.jpg" alt="Logo Mi Delirio">
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="navbar-section logo">
+            <img src="img.jpg" alt="Logo Mi Delirio">
+        </div>
+        <div class="navbar-section brand">
+            Mi Delirio
+        </div>
+        <div class="navbar-section">
+            <a href="#contacto" class="nav-btn">Contactame</a>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="project">
+
+        <!-- Diseño -->
+        <section class="card">
+            <h2>DISEÑO</h2>
+            <p>Todo lo que soñaste</p>
+            <div class="galeria">
+                <img src="images/diseño.jpg" alt="diseño" onclick="abrirgaleria('galeria-diseno')">
+                <img src="images/diseño2.jpg" alt="diseño" onclick="abrirgaleria('galeria-diseno')">
+                <img src="images/diseño3.jpg" alt="diseño" onclick="abrirgaleria('galeria-diseno')">
+            </div>
+        </section>
+
+        <!-- Impresión -->
+        <section class="card">
+            <h2>IMPRESIÓN</h2>
+            <p>Sobre todo material</p>
+            <div class="galeria">
+                <img src="images/impresion.jpg" alt="impresión" onclick="abrirgaleria('galeria-impresion')">
+                <img src="images/impresion2.jpg" alt="impresión" onclick="abrirgaleria('galeria-impresion')">
+                <img src="images/impresion3.jpg" alt="impresión" onclick="abrirgaleria('galeria-impresion')">
+            </div>
+        </section>
+
+        <!-- Sublimación -->
+        <section class="card">
+            <h2>SUBLIMACIÓN</h2>
+            <p>En distintos materiales</p>
+            <div class="galeria">
+                <img src="images/sublimacion1.jpg" alt="sublimación" onclick="abrirgaleria('galeria-sublimacion')">
+                <img src="images/sublimacion1.png" alt="sublimación" onclick="abrirgaleria('galeria-sublimacion')">
+                <img src="images/sublimacion2.jpg" alt="sublimación" onclick="abrirgaleria('galeria-sublimacion')">
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" class="card contacto">
+            <h2>Contacto</h2>
+            <ul class="contact-list">
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:mi.delirio.05@gmail.com">mi.delirio.05@gmail.com</a>
+                </li>
+                <li>
+                    <i class="fab fa-whatsapp"></i>
+                    <a href="https://wa.me/5493425502094" target="_blank">+54 9 342 550 2094</a>
+                </li>
+            </ul>
+
+            <h2>🌐 Redes Sociales</h2>
+            <ul class="contact-list">
+                <li>
+                    <i class="fab fa-facebook"></i>
+                    <a href="https://www.facebook.com/mi.delirio.s.05" target="_blank">mi.delirio.s.05</a>
+                </li>
+                <li>
+                    <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/mi.delirio.s" target="_blank">Mi.delirio.s</a>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- Modal con slider -->
+    <div id="galeria-general" style="display:none;">
+        <span class="cerrar">&times;</span>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper" id="galeria-slides">
+                <!-- Las imágenes se cargan dinámicamente -->
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
     </div>
-    <div class="navbar-section brand">Mi delirio</div>
-    <div class="navbar-section">
-      <a href="#contacto" class="nav-btn">Contactame</a>
-    </div>
-  </header>
 
-  <main class="project">
-
-    <!-- DISEÑO -->
-    <section class="card">
-      <h2>DISEÑO</h2>
-      <p>Todo lo que soñaste</p>
-      <div class="galeria galeria-diseno">
-        <a href="images/diseno.jpg" data-lightbox="diseno" data-title="Diseño 1">
-          <img src="images/diseno.jpg" alt="Diseño 1">
-        </a>
-        <a href="images/diseno2.jpg" data-lightbox="diseno" data-title="Diseño 2">
-          <img src="images/diseno2.jpg" alt="Diseño 2">
-        </a>
-        <a href="images/diseno3.jpg" data-lightbox="diseno" data-title="Diseño 3">
-          <img src="images/diseno3.jpg" alt="Diseño 3">
-        </a>
-      </div>
-    </section>
-
-    <!-- IMPRESIÓN -->
-    <section class="card">
-      <h2>IMPRESIÓN</h2>
-      <p>Sobre todo material</p>
-      <div class="galeria galeria-impresion">
-        <a href="images/impresion.jpg" data-lightbox="impresion" data-title="Impresión 1">
-          <img src="images/impresion.jpg" alt="Impresión 1">
-        </a>
-        <a href="images/impresion2.jpg" data-lightbox="impresion" data-title="Impresión 2">
-          <img src="images/impresion2.jpg" alt="Impresión 2">
-        </a>
-        <a href="images/impresion3.jpg" data-lightbox="impresion" data-title="Impresión 3">
-          <img src="images/impresion3.jpg" alt="Impresión 3">
-        </a>
-      </div>
-    </section>
-
-    <!-- SUBLIMACIÓN -->
-    <section class="card">
-      <h2>SUBLIMACIÓN</h2>
-      <p>En distintos materiales</p>
-      <div class="galeria galeria-sublimacion">
-        <a href="images/sublimacion1.jpg" data-lightbox="sublimacion" data-title="Sublimación 1">
-          <img src="images/sublimacion1.jpg" alt="Sublimación 1">
-        </a>
-        <a href="images/sublimacion1.png" data-lightbox="sublimacion" data-title="Sublimación 2">
-          <img src="images/sublimacion1.png" alt="Sublimación 2">
-        </a>
-        <a href="images/sublimacion2.jpg" data-lightbox="sublimacion" data-title="Sublimación 3">
-          <img src="images/sublimacion2.jpg" alt="Sublimación 3">
-        </a>
-      </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section id="contacto" class="card contacto">
-      <h2>Contacto</h2>
-      <ul class="contact-list">
-        <li><i class="fas fa-envelope"></i><a href="mailto:mi.delirio.05@gmail.com">mi.delirio.05@gmail.com</a></li>
-        <li><i class="fab fa-whatsapp"></i><a href="https://wa.me/5493425502094" target="_blank">+54 9 342 550 2094</a></li>
-      </ul>
-      <h2>🌐 Redes Sociales</h2>
-      <ul class="contact-list">
-        <li><i class="fab fa-facebook"></i><a href="https://www.facebook.com/mi.delirio.s.05" target="_blank">mi.delirio.s.05</a></li>
-        <li><i class="fab fa-instagram"></i><a href="https://www.instagram.com/mi.delirio.s" target="_blank">Mi.delirio.s</a></li>
-      </ul>
-    </section>
-
-  </main>
-
-  <!-- Lightbox JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 </body>
 </html>
