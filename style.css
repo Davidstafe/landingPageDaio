@@ -8,16 +8,15 @@
 body {
   font-family: 'Poppins', sans-serif;
   color: #333;
-  background-image: url('images/fondo.jpg'); /* cambia la ruta si hace falta */
+  background-image: url('images/fondo.jpg'); /* fondo */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   min-height: 100vh;
   position: relative;
-  padding-top: 80px; /* para que no tape el header */
+  padding-top: 80px;
 }
 
-/* Overlay translúcido para suavizar el fondo */
 body::before {
   content: "";
   position: fixed;
@@ -41,10 +40,7 @@ body::before {
   z-index: 1000;
 }
 
-.logo img {
-  height: 60px;
-  object-fit: contain;
-}
+.logo img { height: 60px; object-fit: contain; }
 
 .brand {
   font-size: 24px;
@@ -61,20 +57,13 @@ body::before {
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
-  white-space: nowrap;
   transition: background 0.3s;
 }
 
-.nav-btn:hover {
-  background-color: #094db2;
-}
+.nav-btn:hover { background-color: #094db2; }
 
 /* ==== MAIN ==== */
-main.project {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-}
+main.project { max-width: 900px; margin: 0 auto; padding: 20px; }
 
 /* ==== CARDS ==== */
 .card {
@@ -86,123 +75,56 @@ main.project {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.card h2 {
-  color: #222;
-  margin-bottom: 10px;
-}
-
-.card p {
-  color: #555;
-  font-size: 14px;
-}
+.card h2 { color: #222; margin-bottom: 10px; }
+.card p { color: #555; font-size: 14px; }
 
 /* ==== GALERÍA ==== */
 .galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
-  margin-top: 15px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .galeria img {
-  width: 100%;
-  height: 200px;
+  width: 30%;
+  max-width: 240px;
+  height: 160px;
   object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
+  border-radius: 8px;
   cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  transition: transform .16s;
 }
 
-.galeria img:hover {
-  transform: scale(1.05);
+.galeria img:hover { transform: scale(1.03); }
+
+/* Lightbox2 se ajusta automáticamente, solo limitamos tamaño */
+.lightbox img {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
 }
 
-/* ==== REDES Y CONTACTO ==== */
+/* ==== CONTACTO ==== */
 .contacto {
   text-align: center;
   padding: 20px;
 }
 
-.contacto h2 {
-  margin-top: 15px;
-  font-size: 22px;
-  color: #333; /* mismo color para títulos */
-}
-
-.contact-list {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 20px 0;
-}
-
-.contact-list li {
-  margin: 8px 0;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.contact-list i {
-  font-size: 20px;
-}
-
-/* Colores de cada icono */
+.contacto h2 { margin-top: 15px; font-size: 22px; color: #333; }
+.contact-list { list-style: none; padding: 0; margin: 10px 0 20px; }
+.contact-list li { margin: 8px 0; font-size: 18px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.contact-list i { font-size: 20px; }
 .fa-envelope { color: #444; }
-.fa-whatsapp { color: #25D366; } /* verde oficial */
-.fa-facebook { color: #1877f2; } /* azul oficial */
-.fa-instagram { color: #E4405F; } /* rosa oficial */
+.fa-whatsapp { color: #25D366; }
+.fa-facebook { color: #1877f2; }
+.fa-instagram { color: #E4405F; }
+.contact-list a { text-decoration: none; color: #333; font-weight: 500; }
+.contact-list a:hover { color: #ff4081; }
 
-/* Estilo de los links */
-.contact-list a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-.contact-list a:hover {
-  color: #ff4081; /* color de hover uniforme */
-}
-
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.9);
-}
-
-.modal-content {
-  margin: auto;
-  display: block;
-  max-width: 80%;
-  border-radius: 10px;
-}
-
-.cerrar {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
 /* ==== RESPONSIVE ==== */
 @media (max-width: 600px) {
-  .brand {
-    font-size: 18px;
-  }
-
-  .galeria img {
-    height: 150px;
-  }
+  .brand { font-size: 18px; }
+  .galeria img { width: 45%; height: 140px; }
 }
