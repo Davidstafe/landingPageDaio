@@ -38,7 +38,7 @@
             <div class="galeria">
               <img src="images/diseño.jpg" alt="diseño"onclick="abrirgaleria('galeria-diseno')">
                <img src="images/diseño2.jpg" alt="diseño" onclick="abrirgaleria('galeria-diseno')">
-                <img src="images/diseño3.jpg" alt="diseño"onclick="abrirgaleria('galeria-diseno')>
+                <img src="images/diseño3.jpg" alt="diseño"onclick="abrirgaleria('galeria-diseno')">
             </div>
         </section>
 
@@ -62,39 +62,45 @@
           <div class="galeria">
             <img src="images/sublimacion1.jpg" alt="foto"onclick="abrirgaleria('galeria-sublimacion')">
             <img src="images/sublimacion1.png" alt="foto"onclick="abrirgaleria('galeria-sublimacion')">
-             <img src="images/sublimacion2.jpg" alt="foto"onclick="abrirgaleria('galeria-sublimacion')>
+            <img src="images/sublimacion2.jpg" alt="foto"onclick="abrirgaleria('galeria-sublimacion')">
           </div>
-            <!-- Contenedor general de la galería (oculto al inicio) -->
+          
+<!-- Modal con slider -->
 <div id="galeria-general" style="display:none;">
-  <div class="mySwiper swiper">
-    <div id="galeria-slides" class="swiper-wrapper">
-<!-- Modal oculto -->
-<div id="modal" class="modal">
   <span class="cerrar">&times;</span>
-  <img class="modal-content" id="imgAmpliada">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper" id="galeria-slides"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
 </div>
 
-        <section class="card">
+<section id="contacto" class="card contacto">
+  <h2> Contacto</h2>
+  <ul class="contact-list">
+    <li>
+      <i class="fas fa-envelope"></i>
+      <a href="mailto:mi.delirio.05@gmail.com">mi.delirio.05@gmail.com</a>
+    </li>
+    <li>
+      <i class="fab fa-whatsapp"></i>
+      <a href="https://wa.me/5493425502094" target="_blank">+54 9 342 550 2094</a>
+    </li>
+  </ul>
 
-            <h2><i class="fas fa-globe"></i> Redes Sociales</h2>
-            <a href="https://www.facebook.com/mi.delirio.s.05" target="_blank">
-                <i class="fab fa-facebook"></i> Facebook: mi.delirio.s.05
-            </a><br>
+  <h2>🌐 Redes Sociales</h2>
+  <ul class="contact-list">
+    <li>
+      <i class="fab fa-facebook"></i>
+      <a href="https://www.facebook.com/mi.delirio.s.05" target="_blank">mi.delirio.s.05</a>
+    </li>
+    <li>
+      <i class="fab fa-instagram"></i>
+      <a href="https://www.instagram.com/mi.delirio.s" target="_blank">Mi.delirio.s</a>
+    </li>
+  </ul>
+</section>
 
-            <a href="https://www.instagram.com/mi.delirio.s" target="_blank">
-                <i class="fab fa-instagram"></i> Instagram: Mi.delirio.s
-            </a>
-        </section>
-
-
-        <section id="contacto" class="card contacto">
-            <h2>Contacto</h2>
-                <p>📩Email: <a href="mailto:mi.delirio.05@gmail.com">mi.delirio.05@gmail.com</a></p>
-            
-                <a href="https://wa.me/5493425502094" target="_blank" class="btn-whatsapp">
-                <button> <h5><i class="fab fa-whatsapp"></i> +5493425502094</h5></button></a>
-           
-        </section>
 
     </main>
 

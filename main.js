@@ -1,70 +1,61 @@
 let swiperInstance = null;
 
-function abrirgaleria(id) {
+const imagenes = {
+  'galeria-diseno': ['images/diseno.jpg', 'images/diseno2.jpg', 'images/diseno3.jpg'],
+  'galeria-impresion': ['images/impresion.jpg', 'images/impresion2.jpg', 'images/impresion3.jpg'],
+  'galeria-sublimacion': ['images/sublimacion1.jpg', 'images/sublimacion1.png', 'images/sublimacion2.jpg']
+};
+
+function abrirGaleria(id) {
   const contenedor = document.getElementById('galeria-slides');
   contenedor.innerHTML = '';
 
-  let indexInicial = 0; // slide donde inicia la categoría seleccionada
-  let contador = 0;
+  // Cargar imágenes de la categoría
+  imagenes[id].forEach(src => {
+    const slide = document.createElement('div');
+    slide.classList.add('swiper-slide');
+    slide.innerHTML = `<img src="${src}" style="width:100%">`;
+    contenedor.appendChild(slide);
+  });
 
-  for (let cat in imagenes) {
-    // Slide del título de la categoría
-    const tituloSlide = document.createElement('div');
-    tituloSlide.classList.add('swiper-slide', 'titulo-slide');
-    tituloSlide.innerHTML = `<h2>${cat.replace('galeria-', '').toUpperCase()}</h2>`;
-    contenedor.appendChild(tituloSlide);
-    contador++;
+  // Mostrar modal
+  const modal = document.getElementById('galeria-general');
+  modal.style.display = 'block';
 
-    // Slide con las 3 imágenes
-    const grupoSlide = document.createElement('div');
-    grupoSlide.classList.add('swiper-slide');
-    grupoSlide.innerHTML = `
-      <div class="grupo-fotos">
-        ${imagenes[cat].map(img => `<img src="${img}" alt="">`).join('')}
-      </div>
-    `;
-    contenedor.appendChild(grupoSlide);
-
-    // Guardamos el índice inicial si es la categoría elegida
-    if (cat === id) indexInicial = contador - 1;
-    contador++;
-  }
-
-  // Mostrar galería
-  document.getElementById('galeria-general').style.display = 'block';
-
-  // Destruir Swiper previo si existe
+  // Destruir Swiper previo
   if (swiperInstance) swiperInstance.destroy(true, true);
 
   // Inicializar Swiper
   swiperInstance = new Swiper('.mySwiper', {
-    centeredSlides: true,
     slidesPerView: 1,
-    spaceBetween: 20,
+    loop: true,
     navigation: {
       nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      prevEl: '.swiper-button-prev'
     },
-    initialSlide: indexInicial,
-  });
-
-  // Esc para cerrar
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') cerrarGaleria();
+    centeredSlides: true
   });
 }
 
+// Cerrar modal
 function cerrarGaleria() {
-  const galeria = document.getElementById('galeria-general');
-  galeria.style.display = 'none';
+  const modal = document.getElementById('galeria-general');
+  modal.style.display = 'none';
   if (swiperInstance) {
     swiperInstance.destroy(true, true);
     swiperInstance = null;
   }
 }
 
-const imagenes = {
-  'galeria-diseno': ['img/diseno1.jpg', 'img/diseno2.jpg', 'img/diseno3.jpg'],
-  'galeria-impresion': ['img/impresion1.jpg', 'img/impresion2.jpg', 'img/impresion3.jpg'],
-  'galeria-sublimacion': ['imagenes/sublimacion.jpg', 'imagenes/sublimacion1.jpg', 'img/sublimacion3.jpg'],
-};
+// Evento X
+document.querySelector('.cerrar').addEventListener('click', cerrarGaleria);
+
+// Teclas: Escape, flecha izquierda y derecha
+document.addEventListener('keydown', e => {
+  const modal = document.getElementById('galeria-general');
+  if (modal.style.display === 'block') {
+    if (e.key === 'Escape') cerrarGaleria();
+    if (e.key === 'ArrowRight' && swiperInstance) swiperInstance.slideNext();
+    if (e.key === 'ArrowLeft' && swiperInstance) swiperInstance.slidePrev();
+  }
+});
