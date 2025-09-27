@@ -37,11 +37,11 @@
         <section class="card">
             <h2>DISEÑO</h2>
             <p>Todo lo que soñaste</p>
-            <div class="galeria">
-                <img src="images/diseño.jpg" alt="diseño" onclick="abrirgaleria('galeria-diseno')">
-                <img src="images/diseño2.jpg" alt="diseño" onclick="abrirgaleria('galeria-diseno')">
-                <img src="images/diseño3.jpg" alt="diseño" onclick="abrirgaleria('galeria-diseno')">
-            </div>
+ <div class="galeria">
+  <img src="images/diseño.jpg" alt="diseño" onclick="abrirModal(this)">
+  <img src="images/diseño2.jpg" alt="diseño" onclick="abrirModal(this)">
+  <img src="images/diseño3.jpg" alt="diseño" onclick="abrirModal(this)">
+</div>
         </section>
 
         <!-- Impresión -->
@@ -96,16 +96,14 @@
     </main>
 
     <!-- Modal con slider -->
-    <div id="galeria-general" style="display:none;">
-        <span class="cerrar">&times;</span>
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper" id="galeria-slides">
-                <!-- Las imágenes se cargan dinámicamente -->
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
-    </div>
+   <div id="modal" class="modal">
+  <span class="cerrar" onclick="cerrarModal()">&times;</span>
+  <img id="imagen-modal" src="" alt="">
+  <div class="flechas">
+    <span class="prev" onclick="cambiarImagen(-1)">&#10094;</span>
+    <span class="next" onclick="cambiarImagen(1)">&#10095;</span>
+  </div>
+</div>
 
 </body>
 </html>
