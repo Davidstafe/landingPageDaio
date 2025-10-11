@@ -1,7 +1,7 @@
 let swiperInstance = null;
 
 const imagenes = {
-  'galeria-diseno': ['images/diseño.jpg', 'images/diseño2.jpg', 'images/diseño3.jpg'],
+  'galeria-diseno': ['images/diseno.jpg', 'images/diseno2.jpg', 'images/diseno3.jpg'],
   'galeria-impresion': ['images/impresion.jpg', 'images/impresion2.jpg', 'images/impresion3.jpg'],
   'galeria-sublimacion': ['images/sublimacion1.jpg', 'images/sublimacion1.png', 'images/sublimacion2.jpg']
 };
